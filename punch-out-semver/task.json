@@ -1,9 +1,9 @@
 {
   "$schema": "https://raw.githubusercontent.com/Microsoft/azure-pipelines-task-lib/master/tasks.schema.json",
   "id": "cee3b1e3-c35b-4cee-b753-de5233488405",
-  "name": "punch-out-version",
-  "friendlyName": "Punch Out Version",
-  "description": "Calculates the version at release time and adds a tag accordingly to Git and to the build.",
+  "name": "punch-out-semver",
+  "friendlyName": "Punch Out SemVer",
+  "description": "Calculates semantic versions and adds a tag accordingly to Git and to the build.",
   "helpMarkDown": "",
   "category": "Utility",
   "author": "Munir Husseini",

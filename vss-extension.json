@@ -1,8 +1,8 @@
 {
   "baseUri": "https://localhost:44300",
   "manifestVersion": 1,
-  "id": "punch-out-version-extension",
-  "name": "Punch Out Versioning",
+  "id": "punch-out-semver-extension",
+  "name": "Punch Out SemVer",
   "version": "0.1.26",
   "publisher": "Softwareproduction",
   "targets": [
@@ -10,7 +10,7 @@
       "id": "Microsoft.VisualStudio.Services"
     }
   ],
-  "description": "Automatic generation of package versions at release time, based on Git branches and tags.",
+  "description": "Automatic generation of semantic versions, based on Git branches and tags.",
   "categories": [
     "Azure Pipelines"
   ],
@@ -19,18 +19,18 @@
   },
   "files": [
     {
-      "path": "punch-out-version"
+      "path": "punch-out-semver"
     }
   ],
   "contributions": [
     {
-      "id": "punch-out-version",
+      "id": "punch-out-semver",
       "type": "ms.vss-distributed-task.task",
       "targets": [
         "ms.vss-distributed-task.tasks"
       ],
       "properties": {
-        "name": "punch-out-version"
+        "name": "punch-out-semver"
       }
     }
   ]
