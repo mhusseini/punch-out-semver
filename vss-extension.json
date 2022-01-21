@@ -1,0 +1,37 @@
+{
+  "baseUri": "https://localhost:44300",
+  "manifestVersion": 1,
+  "id": "punch-out-version-extension",
+  "name": "Punch Out Versioning",
+  "version": "0.1.26",
+  "publisher": "Softwareproduction",
+  "targets": [
+    {
+      "id": "Microsoft.VisualStudio.Services"
+    }
+  ],
+  "description": "Automatic generation of package versions at release time, based on Git branches and tags.",
+  "categories": [
+    "Azure Pipelines"
+  ],
+  "icons": {
+    "default": "images/extension-icon.png"
+  },
+  "files": [
+    {
+      "path": "punch-out-version"
+    }
+  ],
+  "contributions": [
+    {
+      "id": "punch-out-version",
+      "type": "ms.vss-distributed-task.task",
+      "targets": [
+        "ms.vss-distributed-task.tasks"
+      ],
+      "properties": {
+        "name": "punch-out-version"
+      }
+    }
+  ]
+}

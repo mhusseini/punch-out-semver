@@ -1,4 +1,4 @@
-node_modules
-*.js
-*.js.map
-.DS_Store
+**/node_modules/
+**/.idea/
+**/.DS_Store
+**/*.vsix
