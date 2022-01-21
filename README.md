@@ -10,8 +10,8 @@ Punch Out SemVer then calculates the next version from the current Git branch an
 The versions generated adhere to the following pattern:
 
 - `1.0.0` Release version created by builds on the release branch.
-- `1.0.1-abcd.0` Pre-release version created by builds on a bugfix branch.
-- `1.1.0-abcd.0` Pre-release version created by builds on a feature branch.
+- `1.0.1-xxxx.0` Pre-release version created by builds on a bugfix branch.
+- `1.1.0-xxxx.0` Pre-release version created by builds on a feature branch.
 - `1.1.0-beta.0` Pre-release version created by builds on the develop branch.
 
 Version are added as tags into Git. The tags may contain configurable 
@@ -52,3 +52,17 @@ Punch Out SemVer then calculates the next version by using the current version a
 5. In all other cases, increment the label increment.
 
 At the end, the new version is added as a tag to Git.
+
+## How to set the next version
+To manually set the version for the next build, a tag as above with the additional suffix of `:next`
+can be added to Git.
+When Punch Out SemVer detects such a tag as the highest available version, it uses it withou modifying
+the major version, the minor version or the patch.
+
+Example:
+
+If currently the tag `v0.1.0` exists, then Punch Out SemVer would normally calculate `v0.3.0-beta.0` on the
+develop branch next. 
+If a tag `v1.0.0:next` was found, then Punch Out SemVer would calculate `v1.0.0-beta.0` on the
+develop branch next.
+
