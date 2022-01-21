@@ -14,6 +14,17 @@ steps:
     version: 'v0.9.x'
 - script: |
     npm install
-    npm run tfx
+    tsc
   workingDirectory: 'punch-out-semver'
   displayName: 'npm install and build'
+- task: PackageAzureDevOpsExtension@3
+  inputs:
+    rootFolder: 
+    updateTasksVersion: false
+- task: PublishAzureDevOpsExtension@3
+  inputs:
+    connectTo: 'VsTeam'
+    connectedServiceName: 'Visual Studio Marketplace'
+    fileType: 'manifest'
+    extensionVisibility: 'privatepreview'
+    extensionPricing: 'free'
