@@ -17,6 +17,16 @@
   "icons": {
     "default": "images/extension-icon.png"
   },
+  "tags": [
+    "Version",
+    "SemVer",
+    "Git"
+  ],
+  "content": {
+    "details": {
+      "path": "README.md"
+    }
+  },
   "files": [
     {
       "path": "punch-out-semver"
