@@ -13,4 +13,5 @@ steps:
 - script: |
     npm install
     npm run tfx
+  workingDirectory: 'punch-out-semver'
   displayName: 'npm install and build'
