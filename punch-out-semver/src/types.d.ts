@@ -5,5 +5,7 @@ export interface GitAutoVersionOptions {
     patchBranch: string,
     betaLabel: string,
     label: string,
-    outputVariable: string
+    outputVariable: string,
+    tagSeparator: string,
+    tagVersionPrefix: string
 }

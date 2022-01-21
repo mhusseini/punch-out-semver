@@ -1,6 +1,6 @@
 import simpleGit, {SimpleGit, SimpleGitOptions} from "simple-git";
 import {updateGitUser} from "./git-config";
-import tl = require("azure-pipelines-task-lib");
+import {getVariable} from "azure-pipelines-task-lib/task";
 import {Git} from "./git";
 
 export class GitImplementation implements Git {
@@ -37,9 +37,9 @@ export class GitImplementation implements Git {
         }
 
         await updateGitUser(this.git);
-        const sourceBranch = tl.getVariable("Build.SourceBranch") || (await this.git.branch()).current;
+        const sourceBranch = getVariable("Build.SourceBranch") || (await this.git.branch()).current;
         const m = /(?<=refs\/.+?\/).+/.exec(sourceBranch);
 
-        this.branch = m ? m[0] : tl.getVariable("Build.SourceBranchName") as string;
+        this.branch = m ? m[0] : getVariable("Build.SourceBranchName") as string;
     }
 }

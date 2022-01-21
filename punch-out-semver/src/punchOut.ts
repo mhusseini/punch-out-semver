@@ -3,15 +3,15 @@ import {GitAutoVersionOptions} from "./types";
 import Version from "./Version";
 import {getBranchType, getLabelFromBranch} from "./git-branches";
 import {bumpVersion} from "./bumpVersion";
-import tl = require("azure-pipelines-task-lib");
+import {setVariable, addBuildTag, setResult, TaskResult} from "azure-pipelines-task-lib/task";
 import RegExp from "./RegExp";
 
 RegExp.extend();
 
 export async function punchOut(git: Git, options: GitAutoVersionOptions) {
     try {
-        const sep = options.packageName ? "-" : "";
-        const prefix = options.packageName + sep + "v";
+        const sep = options.packageName ? options.tagSeparator : "";
+        const prefix = options.packageName + sep + options.tagVersionPrefix;
 
         const tags = await git.listTags(prefix + "*");
 
@@ -32,12 +32,12 @@ export async function punchOut(git: Git, options: GitAutoVersionOptions) {
         await git.pushTags();
 
         if (version.isRelease()) {
-            tl.addBuildTag(tag);
+            addBuildTag(tag);
         }
 
-        tl.setVariable(options.outputVariable, newVersion);
-        tl.setResult(tl.TaskResult.Succeeded, "New version: " + newVersion);
+        setVariable(options.outputVariable, newVersion);
+        setResult(TaskResult.Succeeded, "New version: " + newVersion);
     } catch (err: any) {
-        tl.setResult(tl.TaskResult.Failed, err.message);
+        setResult(TaskResult.Failed, err.message);
     }
 }

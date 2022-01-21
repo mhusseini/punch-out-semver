@@ -10,7 +10,7 @@
   "version": {
     "Major": 0,
     "Minor": 1,
-    "Patch": 16
+    "Patch": 0
   },
   "instanceNameFormat": "Version of $(package)",
   "inputs": [
@@ -68,6 +68,22 @@
       "label": "The name of the variable to store the generated version into.",
       "defaultValue": "versionnumber",
       "required": true,
+      "helpMarkDown": ""
+    },
+    {
+      "name": "tagSeparator",
+      "type": "string",
+      "label": "A string that separated the package name from the version.",
+      "defaultValue": "-",
+      "required": false,
+      "helpMarkDown": ""
+    },
+    {
+      "name": "tagVersionPrefix",
+      "type": "string",
+      "label": "A string that is used to prefix version numbers in Git tags.",
+      "defaultValue": "v",
+      "required": false,
       "helpMarkDown": ""
     }
   ],

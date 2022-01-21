@@ -3,7 +3,7 @@
   "manifestVersion": 1,
   "id": "punch-out-semver-extension",
   "name": "Punch Out SemVer",
-  "version": "0.1.26",
+  "version": "0.1.0",
   "publisher": "Softwareproduction",
   "targets": [
     {

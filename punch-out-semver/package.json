@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "tfx": "tsc && tfx extension create --manifest-globs vss-extension.json --rev-version  -r ../ --output-path ../",
-    "tfx:publish": "tsc && tfx extension publish  -r ../ --publisher Softwareproduction --manifest-globs vss-extension.json punch-out-semver/src/**/*.json --share-with mhusseini --rev-version -t 24n5csne3527wilzcuk5cnzul5sblk6cfefuwq7enjrbmz7rousq --output-path ../"
+    "tfx:publish": "tsc && tfx extension publish  -r ../ --publisher Softwareproduction --manifest-globs vss-extension.json punch-out-semver/src/**/*.json --share-with mhusseini --rev-version -t XXXX --output-path ../"
   },
   "keywords": [],
   "author": "",

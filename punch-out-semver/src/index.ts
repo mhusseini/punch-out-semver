@@ -13,6 +13,8 @@ const options: GitAutoVersionOptions = {
     betaLabel: getInput("betaLabel", false) || "beta",
     label: getInput("label", false) || ".+",
     outputVariable: getInput("outputVariable", false) || "versionnumber",
+    tagSeparator: getInput("tagSeparator", false) || "-",
+    tagVersionPrefix: getInput("tagVersionPrefix", false) || "v",
 };
 
 options.developBranch = undefined;
