@@ -20,7 +20,7 @@ steps:
 - task: PackageAzureDevOpsExtension@3
   inputs:
     rootFolder: 
-    updateTasksVersion: false
+    updateTasksVersion: true
 - task: PublishAzureDevOpsExtension@3
   inputs:
     connectTo: 'VsTeam'
