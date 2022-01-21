@@ -9,7 +9,9 @@ steps:
   inputs:
     versionSpec: '16.x'
   displayName: 'Install Node.js'
-
+- task: TfxInstaller@3
+  inputs:
+    version: 'v0.9.x'
 - script: |
     npm install
     npm run tfx
