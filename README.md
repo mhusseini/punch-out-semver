@@ -1,6 +1,6 @@
-# punch-out-semver
+# Punch Out SemVer
 
-Punch Out SemVer is a pipeline task for Azure Devops that makes version incrementing very easy.
+Punch Out SemVer is a pipeline task for Azure DevOps that makes version incrementing very easy.
 
 The basic idea is to calculate the version only when the built code gets published and not on each commit. 
 For example, add the Punch Out SemVer task into build pipelines that push a NuGet package
