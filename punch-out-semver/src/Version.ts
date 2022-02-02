@@ -73,7 +73,7 @@ export default class Version {
 
     incrementIncrement(all: Version[]) {
         const currentIncrement = Math.max(-1, ...all
-            .filter(v => v !== this && this.equals(v) && v.label === this.label)
+            .filter(v => this.equals(v) && v.label === this.label)
             .map(v => v.increment));
 
         this.increment = currentIncrement + 1;

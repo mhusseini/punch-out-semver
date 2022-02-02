@@ -9,7 +9,7 @@
   "author": "Munir Husseini",
   "version": {
     "Major": 0,
-    "Minor": 1,
+    "Minor": 4,
     "Patch": 0
   },
   "instanceNameFormat": "Version of $(package)",
@@ -28,7 +28,7 @@
       "label": "The name of the branch that contains the release version of the code.",
       "defaultValue": "master",
       "required": true,
-      "helpMarkDown": ""
+      "helpMarkDown": "Usually, 'main' or 'master'."
     },
     {
       "name": "developBranch",
@@ -36,7 +36,7 @@
       "label": "The name of the branch that contains the beta version of the code.",
       "defaultValue": "develop",
       "required": false,
-      "helpMarkDown": ""
+      "helpMarkDown": "In git-flow scenarios, usually 'develop'. If you don't have a beta branch, e.g. for continuous integration, leave blank."
     },
     {
       "name": "patchBranch",
@@ -83,6 +83,14 @@
       "type": "string",
       "label": "A string that is used to prefix version numbers in Git tags.",
       "defaultValue": "v",
+      "required": false,
+      "helpMarkDown": ""
+    },
+    {
+      "name": "debug",
+      "type": "boolean",
+      "label": "Output debug info.",
+      "defaultValue": false,
       "required": false,
       "helpMarkDown": ""
     }

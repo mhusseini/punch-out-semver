@@ -7,5 +7,6 @@ export interface GitAutoVersionOptions {
     label: string,
     outputVariable: string,
     tagSeparator: string,
-    tagVersionPrefix: string
+    tagVersionPrefix: string,
+    debug: boolean
 }

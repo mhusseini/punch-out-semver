@@ -40,6 +40,6 @@ export class GitImplementation implements Git {
         const sourceBranch = getVariable("Build.SourceBranch") || (await this.git.branch()).current;
         const m = /(?<=refs\/.+?\/).+/.exec(sourceBranch);
 
-        this.branch = m ? m[0] : getVariable("Build.SourceBranchName") as string;
+        this.branch = (m ? m[0] : getVariable("Build.SourceBranchName") as string) || sourceBranch;
     }
 }
